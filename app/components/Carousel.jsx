@@ -2,7 +2,7 @@
 import { Heart } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 import { FiChevronLeft, FiChevronRight, FiPlay, FiPause } from "react-icons/fi";
-import Image from "next/image";
+
 const Carousel = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -10,22 +10,22 @@ const Carousel = () => {
     const Table = [
         {
             id: 1,
-            image: "https://s3-alpha-sig.figma.com/img/544e/3029/c4c7cd0100e27f205801be034a1511b4?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UObQ1jdNLafDs35tHDWdbnI2uzfOLubZe~VeQQgEzp-RQ9Sqoq-abOSfTxoGqZ3ilk1R8wmsBLVSD5XErWDgw7ydHqMRBfQjRaaVylP68~6VToFE8bTWnA1~rKuus~oKIvAKV4rfOE8C2VgPnbVGIs4~HEywB-OVRuMP1xKQM84QmxP71f49-CxMzchX8m4xhIugKSLQIajXCgCTH1Gn3fvzzdMqzlExIVky0Z4cHz5qfzEZN5pbt2KWVNeW7c3NDPNh0J92t9KRIk1ZSdLduweifPASbqnUSW~vdt-HmnjDmiuVg75wtE5T9VSWJc0H82waaMtDwq1EOkHWoFyn~g__"
+            img: "https://s3-alpha-sig.figma.com/img/544e/3029/c4c7cd0100e27f205801be034a1511b4?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UObQ1jdNLafDs35tHDWdbnI2uzfOLubZe~VeQQgEzp-RQ9Sqoq-abOSfTxoGqZ3ilk1R8wmsBLVSD5XErWDgw7ydHqMRBfQjRaaVylP68~6VToFE8bTWnA1~rKuus~oKIvAKV4rfOE8C2VgPnbVGIs4~HEywB-OVRuMP1xKQM84QmxP71f49-CxMzchX8m4xhIugKSLQIajXCgCTH1Gn3fvzzdMqzlExIVky0Z4cHz5qfzEZN5pbt2KWVNeW7c3NDPNh0J92t9KRIk1ZSdLduweifPASbqnUSW~vdt-HmnjDmiuVg75wtE5T9VSWJc0H82waaMtDwq1EOkHWoFyn~g__"
 
         },
         {
             id: 2,
-            image: "https://s3-alpha-sig.figma.com/img/544e/3029/c4c7cd0100e27f205801be034a1511b4?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UObQ1jdNLafDs35tHDWdbnI2uzfOLubZe~VeQQgEzp-RQ9Sqoq-abOSfTxoGqZ3ilk1R8wmsBLVSD5XErWDgw7ydHqMRBfQjRaaVylP68~6VToFE8bTWnA1~rKuus~oKIvAKV4rfOE8C2VgPnbVGIs4~HEywB-OVRuMP1xKQM84QmxP71f49-CxMzchX8m4xhIugKSLQIajXCgCTH1Gn3fvzzdMqzlExIVky0Z4cHz5qfzEZN5pbt2KWVNeW7c3NDPNh0J92t9KRIk1ZSdLduweifPASbqnUSW~vdt-HmnjDmiuVg75wtE5T9VSWJc0H82waaMtDwq1EOkHWoFyn~g__"
+            img: "https://s3-alpha-sig.figma.com/img/544e/3029/c4c7cd0100e27f205801be034a1511b4?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UObQ1jdNLafDs35tHDWdbnI2uzfOLubZe~VeQQgEzp-RQ9Sqoq-abOSfTxoGqZ3ilk1R8wmsBLVSD5XErWDgw7ydHqMRBfQjRaaVylP68~6VToFE8bTWnA1~rKuus~oKIvAKV4rfOE8C2VgPnbVGIs4~HEywB-OVRuMP1xKQM84QmxP71f49-CxMzchX8m4xhIugKSLQIajXCgCTH1Gn3fvzzdMqzlExIVky0Z4cHz5qfzEZN5pbt2KWVNeW7c3NDPNh0J92t9KRIk1ZSdLduweifPASbqnUSW~vdt-HmnjDmiuVg75wtE5T9VSWJc0H82waaMtDwq1EOkHWoFyn~g__"
 
         },
         {
             id: 3,
-            image: "https://s3-alpha-sig.figma.com/img/544e/3029/c4c7cd0100e27f205801be034a1511b4?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UObQ1jdNLafDs35tHDWdbnI2uzfOLubZe~VeQQgEzp-RQ9Sqoq-abOSfTxoGqZ3ilk1R8wmsBLVSD5XErWDgw7ydHqMRBfQjRaaVylP68~6VToFE8bTWnA1~rKuus~oKIvAKV4rfOE8C2VgPnbVGIs4~HEywB-OVRuMP1xKQM84QmxP71f49-CxMzchX8m4xhIugKSLQIajXCgCTH1Gn3fvzzdMqzlExIVky0Z4cHz5qfzEZN5pbt2KWVNeW7c3NDPNh0J92t9KRIk1ZSdLduweifPASbqnUSW~vdt-HmnjDmiuVg75wtE5T9VSWJc0H82waaMtDwq1EOkHWoFyn~g__"
+            img: "https://s3-alpha-sig.figma.com/img/544e/3029/c4c7cd0100e27f205801be034a1511b4?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UObQ1jdNLafDs35tHDWdbnI2uzfOLubZe~VeQQgEzp-RQ9Sqoq-abOSfTxoGqZ3ilk1R8wmsBLVSD5XErWDgw7ydHqMRBfQjRaaVylP68~6VToFE8bTWnA1~rKuus~oKIvAKV4rfOE8C2VgPnbVGIs4~HEywB-OVRuMP1xKQM84QmxP71f49-CxMzchX8m4xhIugKSLQIajXCgCTH1Gn3fvzzdMqzlExIVky0Z4cHz5qfzEZN5pbt2KWVNeW7c3NDPNh0J92t9KRIk1ZSdLduweifPASbqnUSW~vdt-HmnjDmiuVg75wtE5T9VSWJc0H82waaMtDwq1EOkHWoFyn~g__"
 
         },
         {
             id: 4,
-            image: "https://s3-alpha-sig.figma.com/img/544e/3029/c4c7cd0100e27f205801be034a1511b4?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UObQ1jdNLafDs35tHDWdbnI2uzfOLubZe~VeQQgEzp-RQ9Sqoq-abOSfTxoGqZ3ilk1R8wmsBLVSD5XErWDgw7ydHqMRBfQjRaaVylP68~6VToFE8bTWnA1~rKuus~oKIvAKV4rfOE8C2VgPnbVGIs4~HEywB-OVRuMP1xKQM84QmxP71f49-CxMzchX8m4xhIugKSLQIajXCgCTH1Gn3fvzzdMqzlExIVky0Z4cHz5qfzEZN5pbt2KWVNeW7c3NDPNh0J92t9KRIk1ZSdLduweifPASbqnUSW~vdt-HmnjDmiuVg75wtE5T9VSWJc0H82waaMtDwq1EOkHWoFyn~g__"
+            img: "https://s3-alpha-sig.figma.com/img/544e/3029/c4c7cd0100e27f205801be034a1511b4?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UObQ1jdNLafDs35tHDWdbnI2uzfOLubZe~VeQQgEzp-RQ9Sqoq-abOSfTxoGqZ3ilk1R8wmsBLVSD5XErWDgw7ydHqMRBfQjRaaVylP68~6VToFE8bTWnA1~rKuus~oKIvAKV4rfOE8C2VgPnbVGIs4~HEywB-OVRuMP1xKQM84QmxP71f49-CxMzchX8m4xhIugKSLQIajXCgCTH1Gn3fvzzdMqzlExIVky0Z4cHz5qfzEZN5pbt2KWVNeW7c3NDPNh0J92t9KRIk1ZSdLduweifPASbqnUSW~vdt-HmnjDmiuVg75wtE5T9VSWJc0H82waaMtDwq1EOkHWoFyn~g__"
 
         },
 
@@ -72,12 +72,11 @@ const Carousel = () => {
                                             <h1 className="font-sans  bg-white rounded-full px-2 py-1">Art de la table</h1>
                                         </div>
                                      
-                                        <Image
+                                        <img
                                             src={"https://s3-alpha-sig.figma.com/img/544e/3029/c4c7cd0100e27f205801be034a1511b4?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UObQ1jdNLafDs35tHDWdbnI2uzfOLubZe~VeQQgEzp-RQ9Sqoq-abOSfTxoGqZ3ilk1R8wmsBLVSD5XErWDgw7ydHqMRBfQjRaaVylP68~6VToFE8bTWnA1~rKuus~oKIvAKV4rfOE8C2VgPnbVGIs4~HEywB-OVRuMP1xKQM84QmxP71f49-CxMzchX8m4xhIugKSLQIajXCgCTH1Gn3fvzzdMqzlExIVky0Z4cHz5qfzEZN5pbt2KWVNeW7c3NDPNh0J92t9KRIk1ZSdLduweifPASbqnUSW~vdt-HmnjDmiuVg75wtE5T9VSWJc0H82waaMtDwq1EOkHWoFyn~g__"}
                                             alt=''
-                                            objectFit="cover"
-                                            objectPosition="center"
-                                            className="mix-blend-multiply"
+                                            
+                                            className="mix-blend-multiply  object-cover object-center"
                                           
                                         />
                                     </div>
