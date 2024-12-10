@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 import Carousel from './components/Carousel'
 import Carousel2 from './components/Carousel2'
 
+import Image from "next/image";
 
 
 const Page = () => {
@@ -98,7 +99,7 @@ const Page = () => {
           <div className='h-full w-14  flex flex-col gap-y-3 absolute left-5'>
             {Array.from({ length: 4 }).map((_, index) => (
               <div key={index}>
-                <img
+                <Image
                   src="https://s3-alpha-sig.figma.com/img/544e/3029/c4c7cd0100e27f205801be034a1511b4?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=aMiUHuZpoRfvCz7IdNj2nYMIEe9tvEPdyyCHF0DOBg8L0OJ0nW5qGr18a6bumiC9KC5NNOc7sPBq2jVeZg87n4UMD7tLNWF5h2a~fDsdjH8EqSlkDaU9YHIbWQtbKQgxbEUJGWIeLkwH2X6VitjFrDWno~7ErXq82GFbCLacNn-W4G439x0Nx318gI1~lWTerCrW~Yq1NrBe3OdSB~8MgZaevo2ZWSsz3Ceb2mmjPctR2710Cv~8XM8ye-cN-~6HqDhBdRsI2ctsjWp7aRm9MvBW0MTsjsMhihSn~DX5Cz4f-wnHu3RJOQjpH6WGyytDlXvAbNju85hZG83l4VpnCQ__"
                   alt="Image description"
                   className="rounded-md cursor-pointer "
@@ -107,7 +108,7 @@ const Page = () => {
             ))}
           </div>
           <div className=''>
-            <img src="https://s3-alpha-sig.figma.com/img/a697/3509/f0a6397c22547c66edb2d8aa2737a300?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=kAgvBKhptyNn2X9wgoUT-2AImt5tPN~DqXmg9ivpm7afXoMGoMccm87TaTIdmy3DVZ2kt62od2NsKxgv8d2xJWMexc2CldAnLMpI2uEHIYxZNe~DKesHflJm7g37IrCHmdXH3P-bVYeL-xK5tTUfbx2RO5Tw4NbRRtpJoMm-6ElwvG98gmIwH-4ptk9z-znzlHf9hyS9jqtKnJ6XdszWzlOVnz~YKnG8a2I1C6uZlt8m3~LHTzwx8Oj7mugjPlLqU8ZyHuGXsDWCKl7jrzeaj9Bl9sdr4ZnVbJgPI1zL~cQlce7eM0BSjgegYhzuKS8boN8eGR5vwL64WcQYlqHUNw__" alt="" className='w-full h-full mix-blend-multiply ' />
+            <Image src="https://s3-alpha-sig.figma.com/img/a697/3509/f0a6397c22547c66edb2d8aa2737a300?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=kAgvBKhptyNn2X9wgoUT-2AImt5tPN~DqXmg9ivpm7afXoMGoMccm87TaTIdmy3DVZ2kt62od2NsKxgv8d2xJWMexc2CldAnLMpI2uEHIYxZNe~DKesHflJm7g37IrCHmdXH3P-bVYeL-xK5tTUfbx2RO5Tw4NbRRtpJoMm-6ElwvG98gmIwH-4ptk9z-znzlHf9hyS9jqtKnJ6XdszWzlOVnz~YKnG8a2I1C6uZlt8m3~LHTzwx8Oj7mugjPlLqU8ZyHuGXsDWCKl7jrzeaj9Bl9sdr4ZnVbJgPI1zL~cQlce7eM0BSjgegYhzuKS8boN8eGR5vwL64WcQYlqHUNw__" alt="" className='w-full h-full mix-blend-multiply ' />
           </div>
         </div>
 
@@ -234,7 +235,7 @@ const Page = () => {
         <div className='w-full h-[25rem] flex gap-x-5 '>
           <div className='w-1/2 h-full'>
 
-            <img src="https://s3-alpha-sig.figma.com/img/cb2f/10dc/bd417ec3068aec151c8c21328b97422b?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JgbnqYDwepMZh9oDPGnbOLwF20VADdqnffFbbsgDI51DfdxPH6gh6JxIOItb7Yk5W5un9JJcR0S7NmwbgJyYSqH4nAydsjTKpj09D-qrmw9QvYLd1GXavEoonOeBChj9~dgblj3bjGNgLE8-6g9luyXLN4sAEQjvaNamfEoNooU8zZf0YbL0Snc73bHSEwBJHdltmlPIxwsL-FBRdgObqy2Vdn0OzveGSfIGqdY7aU9pdMHxeZiYGTYl47oLRDJ9HEP~Xkd2bLWs3XaZlUzWHBZ4zNJXWmXfApoSzuKOzEdibF4lBzcQQZ6N64a9ULltgG9~wXkRSRQlXqHiV4mdYg__" alt="" className='rounded-lg h-full w-full object-cover object-center' />
+            <Image src="https://s3-alpha-sig.figma.com/img/cb2f/10dc/bd417ec3068aec151c8c21328b97422b?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=JgbnqYDwepMZh9oDPGnbOLwF20VADdqnffFbbsgDI51DfdxPH6gh6JxIOItb7Yk5W5un9JJcR0S7NmwbgJyYSqH4nAydsjTKpj09D-qrmw9QvYLd1GXavEoonOeBChj9~dgblj3bjGNgLE8-6g9luyXLN4sAEQjvaNamfEoNooU8zZf0YbL0Snc73bHSEwBJHdltmlPIxwsL-FBRdgObqy2Vdn0OzveGSfIGqdY7aU9pdMHxeZiYGTYl47oLRDJ9HEP~Xkd2bLWs3XaZlUzWHBZ4zNJXWmXfApoSzuKOzEdibF4lBzcQQZ6N64a9ULltgG9~wXkRSRQlXqHiV4mdYg__" alt="" className='rounded-lg h-full w-full object-cover object-center' />
           </div>
           <div className='w-1/2  flex flex-col gap-y-5 items-start justify-center bg-[#e2d7c2]/20 rounded-xl p-5'>
             <h1 className='text-zinc-600 font-medium text-3xl'>S'insrire & economiser <span className='text-blue-500'>10%</span></h1>
