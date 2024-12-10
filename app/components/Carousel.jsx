@@ -68,13 +68,17 @@ const Carousel = () => {
                                 <div className=" w-full  flex flex-col gap-y-2 justify-center items-center rounded-lg  overflow-hidden h-full cursor-pointer  font-sans  py-3">
                                     <div className="bg-[#F9F7F5] shadow-sm rounded-md" >
                                         <div className="w-full flex justify-between px-5 pt-5">
-                                            <Heart className="size-7"/>
+                                            <Heart className="size-7" />
                                             <h1 className="font-sans  bg-white rounded-full px-2 py-1">Art de la table</h1>
                                         </div>
+                                     
                                         <Image
-                                            src="https://s3-alpha-sig.figma.com/img/544e/3029/c4c7cd0100e27f205801be034a1511b4?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UObQ1jdNLafDs35tHDWdbnI2uzfOLubZe~VeQQgEzp-RQ9Sqoq-abOSfTxoGqZ3ilk1R8wmsBLVSD5XErWDgw7ydHqMRBfQjRaaVylP68~6VToFE8bTWnA1~rKuus~oKIvAKV4rfOE8C2VgPnbVGIs4~HEywB-OVRuMP1xKQM84QmxP71f49-CxMzchX8m4xhIugKSLQIajXCgCTH1Gn3fvzzdMqzlExIVky0Z4cHz5qfzEZN5pbt2KWVNeW7c3NDPNh0J92t9KRIk1ZSdLduweifPASbqnUSW~vdt-HmnjDmiuVg75wtE5T9VSWJc0H82waaMtDwq1EOkHWoFyn~g__"
+                                            src={"https://s3-alpha-sig.figma.com/img/544e/3029/c4c7cd0100e27f205801be034a1511b4?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UObQ1jdNLafDs35tHDWdbnI2uzfOLubZe~VeQQgEzp-RQ9Sqoq-abOSfTxoGqZ3ilk1R8wmsBLVSD5XErWDgw7ydHqMRBfQjRaaVylP68~6VToFE8bTWnA1~rKuus~oKIvAKV4rfOE8C2VgPnbVGIs4~HEywB-OVRuMP1xKQM84QmxP71f49-CxMzchX8m4xhIugKSLQIajXCgCTH1Gn3fvzzdMqzlExIVky0Z4cHz5qfzEZN5pbt2KWVNeW7c3NDPNh0J92t9KRIk1ZSdLduweifPASbqnUSW~vdt-HmnjDmiuVg75wtE5T9VSWJc0H82waaMtDwq1EOkHWoFyn~g__"}
                                             alt=''
-                                            className=" object-cover object-center  mix-blend-multiply"
+                                            objectFit="cover"
+                                            objectPosition="center"
+                                            className="mix-blend-multiply"
+                                          
                                         />
                                     </div>
                                     <div className="w-full flex  justify-between px-5 font-medium text-xl ">
@@ -107,7 +111,7 @@ const Carousel = () => {
                     <FiChevronRight className="w-6 h-6 text-gray-800" />
                 </button>
 
-             
+
             </div>
         </div>
     );
