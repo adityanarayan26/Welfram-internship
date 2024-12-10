@@ -7,7 +7,7 @@ import Carousel2 from './components/Carousel2'
 
 
 
-const page = () => {
+const Page = () => {
 
   const subNavbar = [{
     title: 'Art de la table',
@@ -293,4 +293,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
